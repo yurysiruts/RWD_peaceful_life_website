@@ -38,6 +38,10 @@ img {
   display: block;
 }
 
+strong {
+  font-weight: 700;
+}
+
 /* ================ 
     Layout
 ================*/
@@ -57,6 +61,13 @@ img {
 
 .header {
   text-align: center;
+}
+
+.footer {
+  background-color: var(--clr-title);
+  color: #fff;
+  text-align: center;
+  padding: 3em 0;
 }
 
 @media (min-width: 750px) {
@@ -117,13 +128,13 @@ img {
 .nav_item {
   margin: 0 1em;
   padding: 0.2em 0;
-  cursor: pointer;
   letter-spacing: 2px;
   margin-bottom: 1em;
 }
 
 .nav_item a {
   font-weight: 700;
+  cursor: pointer;
   color: var(--clr-links);
   text-transform: uppercase;
 }
@@ -176,6 +187,22 @@ img {
   margin-bottom: 0.75em;
 }
 
+.article_subtitle {
+  font-family: "Lora", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--clr-subtitle);
+  margin-bottom: 0.75em;
+}
+
+.article_featured_image {
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 0.75em;
+}
+
 .article_body {
   font-family: "Ubuntu", sans-serif;
   font-size: 1.125rem;
@@ -184,9 +211,6 @@ img {
   margin-bottom: 0.25em;
 }
 
-.article_body strong {
-  font-weight: 700;
-}
 .article_body a {
   font-weight: 400;
   text-decoration: underline;
@@ -298,11 +322,15 @@ img {
   .article_recent_image {
     min-height: 225px;
     object-fit: cover;
-    /* object-position: center; */
+    object-position: right;
   }
 }
 
 /* widgets */
+
+.sidebar {
+  display: none;
+}
 
 .sidebar_widget {
   margin-bottom: 2em;
@@ -314,6 +342,10 @@ img {
 }
 
 @media (min-width: 750px) {
+  .sidebar {
+    display: block;
+  }
+
   .sidebar_widget {
     padding: 1em;
     border: 1em solid var(--bg-white);
@@ -333,5 +365,9 @@ img {
 
   .widget_post {
     border-bottom: 1px solid var(--clr-title);
+  }
+  .widget_post:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
   }
 }
